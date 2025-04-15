@@ -23,26 +23,26 @@ namespace Calculadora.ConsoleApp
                 Console.Write("Opção: ");
 
                 var opcao = Console.ReadLine();
-
+                //todos os que tem "operacoes." ele esta puxando do outro arquivo.
                 if (opcao == "1")
                 {
-                    operacoesBasicas('+');
+                    operacoes.operacoesBasicas('+'); 
                 }
                 else if (opcao == "2")
                 {
-                    operacoesBasicas('-');
+                    operacoes.operacoesBasicas('-');
                 }
                 else if (opcao == "3")
                 {
-                    operacoesBasicas('*');
+                    operacoes.operacoesBasicas('*');
                 }
                 else if (opcao == "4")
                 {
-                    operacoesBasicas('/');
+                    operacoes.operacoesBasicas('/');
                 }
                 else if (opcao == "5")
                 {
-                    Tabuada();
+                    operacoes.Tabuada();
                 }
                 else if (opcao == "0")
                 {
@@ -53,61 +53,6 @@ namespace Calculadora.ConsoleApp
                     Console.WriteLine("Opção inválida! Pressione qualquer tecla para voltar.");
                     Console.ReadKey();
                 }
-            }
-
-            static void operacoesBasicas(char operador)
-            {
-                Console.Clear();
-                Console.Write("Digite o primeiro Valor: ");
-                double num1 = double.Parse(Console.ReadLine());
-
-                Console.Write("Digite o segundo Valor: ");
-                double num2 = double.Parse(Console.ReadLine());
-
-                double resultado = 0;
-
-                if (operador == '+')
-                {
-                    resultado = num1 + num2;
-                }
-                else if (operador == '-')
-                {
-                    resultado = num1 - num2;
-                }
-                else if (operador == '*')
-                {
-                    resultado = num1 * num2;
-                }
-                else if (operador == '/')
-                {
-                    if (num2 == 0)
-                    {
-                        Console.WriteLine("Não é possível dividir por zero");
-                        Console.ReadKey();
-                        return;
-                    }
-                    resultado = num1 / num2;
-                }
-
-                Console.WriteLine($"Resultado: {resultado}");
-                Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
-                Console.ReadKey();
-            }
-
-            static void Tabuada()
-            {
-                Console.Clear();
-                Console.Write("Digite o Valor para ver a tabuada: ");
-                int numero = int.Parse(Console.ReadLine());
-
-                Console.WriteLine($"\nTabuada do {numero}:");
-                for (int i = 1; i <= 10; i++)
-                {
-                    Console.WriteLine($"{numero} x {i} = {numero * i}");
-                }
-
-                Console.WriteLine("\nPressione qualquer tecla para voltar ao menu.");
-                Console.ReadKey();
             }
         }
 
