@@ -12,7 +12,7 @@ namespace Calculadora.ConsoleApp
             while (continuar)
             {
                 Console.Clear();
-                Console.WriteLine("----CALCULADORA----");
+                Console.WriteLine("----CALCULADORA-----");
                 Console.WriteLine("Selecione uma opção");
                 Console.WriteLine("1 - Adição");
                 Console.WriteLine("2 - Subtração");
